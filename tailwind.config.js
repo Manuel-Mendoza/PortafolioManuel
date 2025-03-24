@@ -1,0 +1,66 @@
+import * as Tailwind from "tailwindcss";
+import daisyui from "daisyui";
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+
+  plugins: [daisyui],
+  daisyui: {
+    themes: [
+      {
+        light: {
+          "primary": "#0369a1",
+          "primary-focus": "#075985",
+          "primary-content": "#ffffff",
+          "secondary": "#7c3aed",
+          "secondary-focus": "#6d28d9",
+          "secondary-content": "#ffffff",
+          "accent": "#f471b5",
+          "accent-focus": "#e84a9d",
+          "accent-content": "#ffffff",
+          "neutral": "#1f2937",
+          "base-100": "#ffffff",
+          "base-200": "#f9fafb",
+          "base-300": "#f3f4f6",
+          "base-content": "#1f2937",
+          "--rounded-box": "0.5rem",
+          "--rounded-btn": "0.5rem",
+          "--rounded-badge": "0.5rem",
+          "--animation-btn": "0.3s",
+          "--animation-input": "0.2s",
+          "--btn-focus-scale": "0.95",
+        },
+        dark: {
+          "primary": "#0ea5e9",
+          "primary-focus": "#0284c7",
+          "primary-content": "#ffffff",
+          "secondary": "#a78bfa",
+          "secondary-focus": "#8b5cf6",
+          "secondary-content": "#ffffff",
+          "accent": "#f471b5",
+          "accent-focus": "#e84a9d",
+          "accent-content": "#ffffff",
+          "neutral": "#1f2937",
+          "base-100": "#1f2937",
+          "base-200": "#111827",
+          "base-300": "#0f172a",
+          "base-content": "#f9fafb",
+          "--rounded-box": "0.5rem",
+          "--rounded-btn": "0.5rem",
+          "--rounded-badge": "0.5rem",
+          "--animation-btn": "0.3s",
+          "--animation-input": "0.2s",
+          "--btn-focus-scale": "0.95",
+        },
+      },
+    ],
+    darkTheme: "dark",
+    base: true,
+    styled: true,
+    utils: true,
+    logs: false,
+    rtl: false,
+    prefix: "",
+  },
+} 
