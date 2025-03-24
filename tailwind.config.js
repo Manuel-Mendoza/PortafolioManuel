@@ -1,17 +1,48 @@
-import * as Tailwind from "tailwindcss";
-import daisyui from "daisyui";
-
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-
-  plugins: [daisyui],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+          950: '#082f49',
+        },
+        secondary: {
+          50: '#f5f3ff',
+          100: '#ede9fe',
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#8b5cf6',
+          600: '#7c3aed',
+          700: '#6d28d9',
+          800: '#5b21b6',
+          900: '#4c1d95',
+          950: '#2e1065',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Montserrat', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
         light: {
           "primary": "#0369a1",
-          "primary-focus": "#075985",
           "primary-content": "#ffffff",
           "secondary": "#7c3aed",
           "secondary-focus": "#6d28d9",
@@ -24,16 +55,9 @@ export default {
           "base-200": "#f9fafb",
           "base-300": "#f3f4f6",
           "base-content": "#1f2937",
-          "--rounded-box": "0.5rem",
-          "--rounded-btn": "0.5rem",
-          "--rounded-badge": "0.5rem",
-          "--animation-btn": "0.3s",
-          "--animation-input": "0.2s",
-          "--btn-focus-scale": "0.95",
         },
         dark: {
           "primary": "#0ea5e9",
-          "primary-focus": "#0284c7",
           "primary-content": "#ffffff",
           "secondary": "#a78bfa",
           "secondary-focus": "#8b5cf6",
@@ -46,13 +70,21 @@ export default {
           "base-200": "#111827",
           "base-300": "#0f172a",
           "base-content": "#f9fafb",
-          "--rounded-box": "0.5rem",
-          "--rounded-btn": "0.5rem",
-          "--rounded-badge": "0.5rem",
-          "--animation-btn": "0.3s",
-          "--animation-input": "0.2s",
-          "--btn-focus-scale": "0.95",
         },
+        myTheme: {
+          "primary": "#d8973c",
+          "primary-content": "#e8f1f2",
+          "secondary": "#197278",
+          "secondary-content": "#e8f1f2",
+          "accent": "#C44536",
+          "accent-content": "#e8f1f2",
+          "neutral": "#191D32",
+          "base-100": "#191D32",
+          "base-200": "#111827",
+          "base-300": "#0f172a",
+          "base-content": "#e8f1f2",
+        },
+
       },
     ],
     darkTheme: "dark",
