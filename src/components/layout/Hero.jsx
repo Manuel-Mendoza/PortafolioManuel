@@ -6,25 +6,25 @@ export const Hero = () => {
       <div className="hero-content text-center">
         <div className="flex">
           <motion.div
-            className="flex !z-10"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="flex !z-10 animate-in slide-in-from-left duration-500"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{
               duration: 0.8,
               ease: [0.43, 0.13, 0.23, 0.96],
               delay: 0.2
             }}
           >
-            <h1 className="text-9xl font-bold">Manuel Mendoza</h1>
-            <p className="text-9xl text-[#d8973c]">.</p>
+            <h1 className="text-9xl font-bold hover:text-balance">Manuel Mendoza</h1>
+            <p className="text-9xl text-[#d8973c] animate-bounce">.</p>
           </motion.div>
           
           <motion.img
             src="/src/assets/saludo.webp"
             alt="yo"
-            className="!z-0 h-2/3 fixed right-0 object-cover object-center max-h-screen"
-            initial={{ opacity: 0, x: 100, scale: 0.8 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
+            className="!z-0 h-2/3 fixed right-0 object-cover object-center max-h-screen animate-in zoom-in-50 duration-1000"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{
               duration: 1,
               ease: [0.43, 0.13, 0.23, 0.96],
