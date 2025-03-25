@@ -34,7 +34,7 @@ export const Hero = () => {
             <h1 className="text-9xl font-bold modern:text-pretty">
               Manuel Mendoza
             </h1>
-            <p className="text-9xl text-[#d8973c] animate-bounce-slow">.</p>
+            <p className="text-9xl text-purple-500 animate-bounce-slow">.</p>
           </motion.div>
           <motion.img
             src="/src/assets/saludo.webp"
