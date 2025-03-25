@@ -1,10 +1,13 @@
 ---
-import Hero from '../components/layout/Hero.astro';
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/layout/Navbar.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import { EntryAnimation } from "../components/layout/EntryAnimation";
+import { Hero } from "../components/layout/Hero";
 ---
 
 <Layout>
-	<Navbar />
-	<Hero />
+  <EntryAnimation client:load>
+    <Navbar />
+    <Hero client:load />
+  </EntryAnimation>
 </Layout>

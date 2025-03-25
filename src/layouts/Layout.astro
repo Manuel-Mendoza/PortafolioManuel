@@ -10,7 +10,12 @@ const themes = ["light", "dark", "myTheme"];
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" sizes="32x32" href="/public/sticker.webp" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      sizes="32x32"
+      href="/public/sticker.webp"
+    />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,8 +25,9 @@ const themes = ["light", "dark", "myTheme"];
     />
     <title>Astro Basics</title>
   </head>
-
-  <slot />
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
