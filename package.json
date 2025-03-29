@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -17,9 +17,10 @@
     "clsx": "^2.1.1",
     "daisyui": "3.9.4",
     "framer-motion": "^12.5.0",
-    "motion": "^12.5.0",
+    "motion": "^12.6.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "simplex-noise": "^4.0.3",
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {

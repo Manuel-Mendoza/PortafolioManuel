@@ -19,9 +19,9 @@ export const Hero = () => {
   return (
     <div className="hero min-h-full bg-primary text-primary-content pt-48">
       <div className="hero-content flex flex-col">
-        <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
-          <div className="flex">
-            <motion.div
+          <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
+            <div className="flex">
+              <motion.div
               className="flex !z-10 animate-slide-in modern:text-wrap-balance"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -39,17 +39,18 @@ export const Hero = () => {
           <motion.img
             src="/src/assets/saludo.webp"
             alt="yo"
-            className="!z-0 h-2/3 fixed right-0 object-cover object-center max-h-screen animate-fade-in"
+            className="!z-0 h-40 absolute right-0 bottom-0 object-center"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
               duration: 1,
               ease: [0.43, 0.13, 0.23, 0.96],
-              delay: 0.5,
+              delay: 1,
             }}
-          />
+            />
           </div>
           <TypewriterEffectSmooth words={words} />
+          <p className="text-center text-lg" style={{fontFamily: 'cursive'}}>"Si lo puedes imaginar, lo puedes programar."</p>
         </BackgroundGradient>
       </div>
     </div>
