@@ -17,7 +17,7 @@ export const Hero = () => {
     },
   ];
   return (
-    <div className="hero min-h-full bg-primary text-primary-content pt-48">
+    <div className="hero min-h-full text-primary-content pt-24">
       <div className="hero-content flex flex-col">
           <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
             <div className="flex">

@@ -1,13 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/layout/Navbar.astro";
-import { EntryAnimation } from "../components/layout/EntryAnimation";
+import { EntryAnimation } from "../components/EntryAnimation";
 import { Hero } from "../components/layout/Hero";
+import Experiencia from "../components/layout/Experiencia.astro";
 ---
 
 <Layout>
   <EntryAnimation client:load>
     <Navbar />
     <Hero client:load />
+    <br />
+    <Experiencia />
   </EntryAnimation>
 </Layout>
