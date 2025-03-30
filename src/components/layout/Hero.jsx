@@ -13,7 +13,7 @@ export const Hero = () => {
     },
     {
       text: "</>",
-      className: "text-green-500 dark:text-purple-500",
+      className: "dark:text-purple-500",
     },
   ];
   return (
@@ -31,10 +31,10 @@ export const Hero = () => {
               delay: 0.2,
             }}
           >
-            <h1 className="text-9xl font-bold modern:text-pretty">
+            <h1 className="text-8xl font-bold modern:text-pretty">
               Manuel Mendoza
             </h1>
-            <p className="text-9xl text-purple-500 animate-bounce-slow">.</p>
+            <p className="text-8xl text-purple-500 animate-bounce-slow">.</p>
           </motion.div>
           <motion.img
             src="/src/assets/saludo.webp"

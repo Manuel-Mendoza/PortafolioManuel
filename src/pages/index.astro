@@ -2,15 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/layout/Navbar.astro";
 import { EntryAnimation } from "../components/EntryAnimation";
-import { Hero } from "../components/layout/Hero";
-import Experiencia from "../components/layout/Experiencia.astro";
+import { Hero } from "../components/layout/Hero"; 
+import Experiencia from "../components/layout/Experiencia.jsx"; 
 ---
 
 <Layout>
   <EntryAnimation client:load>
     <Navbar />
     <Hero client:load />
-    <br />
+    <br/>
     <Experiencia />
   </EntryAnimation>
 </Layout>
