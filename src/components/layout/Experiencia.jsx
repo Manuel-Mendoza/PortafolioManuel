@@ -4,22 +4,31 @@ export default function Experiencia() {
     return (
         <section class="mt-16 grid grid-cols-2 gap-4 container mx-auto px-4">
             <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 dark:bg-zinc-900 flex justify-center items-center">
-                <img src="/src/assets/cool.webp" alt="yo" className="h-80" />
+                <img src="/src/assets/Yopi.png" alt="yo" className="h-96" />
             </BackgroundGradient>
-
-            <div class="container mx-auto px-4">
-                <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 dark:bg-zinc-900">
+            <div className="flex flex-col justify-between">
+                <BackgroundGradient className="rounded-[22px] p-3 sm:p-8 dark:bg-zinc-900">
                     <p className="text-balance">
                         I am a passionate developer focused on creating efficient and
                         elegant technology solutions. I specialize in Frontend web
                         development, with backend experience.
                     </p>
                 </BackgroundGradient>
-                <br />
+                <BackgroundGradient className="rounded-[22px] p-3 sm:p-8 dark:bg-zinc-900">
+                    <p className="text-balance">
+                        Soy un desarrollador apasionado enfocado en crear soluciones tecnológicas eficientes y elegantes. Me especializo en el desarrollo web Frontend, con experiencia en Backend.
+                    </p>
+                </BackgroundGradient>
+                <BackgroundGradient className="rounded-[22px] p-3 sm:p-8 dark:bg-zinc-900">
+                    <p className="text-balance">
+                        Tengo experiencia en el desarrollo de aplicaciones web y móviles, utilizando tecnologías como React, Astro, Tailwind CSS, entre otras.
+                    </p>
+                </BackgroundGradient>
             </div>
-            <div class="container mx-auto px-4">
+            <div class="container mx-auto px-4 col-span-2">
                 <h2 class="text-3xl font-bold text-center mb-8">Experiencia</h2>
             </div>
+          <div></div>
         </section>
     );
 }
