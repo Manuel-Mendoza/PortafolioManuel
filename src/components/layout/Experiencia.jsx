@@ -5,7 +5,7 @@ export default function Experiencia() {
     return (
         <section className="my-16 grid grid-cols-2 gap-x-4 gap-y-8 container mx-auto px-4 max-md:flex max-md:flex-col">
             <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 dark:bg-zinc-900 flex justify-center items-center max-md:h-96 max-md:w-full">
-                <img src="public/real.jpg" alt="yo" className={`h-96 rounded-lg border-2 border-zinc-700`} />
+                <img src="/real.jpg" alt="yo" className={`h-96 rounded-lg border-2 border-zinc-700`} />
             </BackgroundGradient>
             <div className="flex flex-col justify-between max-md:gap-y-4">
                 <BackgroundGradient className="rounded-[22px] p-3 sm:p-8 dark:bg-zinc-900">
