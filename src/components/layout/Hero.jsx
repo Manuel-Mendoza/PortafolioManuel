@@ -34,7 +34,7 @@ export const Hero = () => {
             <p className="text-8xl text-purple-500 animate-bounce-slow max-md:text-4xl">.</p>
           </motion.div>
           <motion.img
-            src="/src/assets/saludo.webp"
+            src="/saludo.webp"
             alt="yo"
             className="!z-0 h-40 absolute right-0 bottom-0 object-center max-md:h-28"
             initial={{ opacity: 0, y: 100 }}
