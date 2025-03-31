@@ -1,0 +1,10 @@
+version: 1
+services:
+  web:
+    type: web
+    name: Portfolio
+    env: production
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+ 
