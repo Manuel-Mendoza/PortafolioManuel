@@ -6,10 +6,7 @@ import { TypewriterEffectSmooth } from "./typewriter-effect";
 export const Hero = () => {
   const words = [
     {
-      text: "Sotfware",
-    },
-    {
-      text: " Developer",
+      text: "Software Developer",
     },
     {
       text: "</>",

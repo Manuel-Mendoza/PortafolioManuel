@@ -1,10 +1,11 @@
 import { BackgroundGradient } from "../background-gradient.jsx";
+import { experiencia } from "../../lib/data.ts";
 
 export default function Experiencia() {
     return (
-        <section class="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 container mx-auto px-4">
+        <section className="my-16 grid grid-cols-2 gap-x-4 gap-y-8 container mx-auto px-4">
             <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 dark:bg-zinc-900 flex justify-center items-center">
-                <img src="/src/assets/Yopi.png" alt="yo" className="h-96" />
+                <img src="/src/assets/real.jpg" alt="yo" className={`h-96 rounded-lg border-2 border-zinc-700`} />
             </BackgroundGradient>
             <div className="flex flex-col justify-between">
                 <BackgroundGradient className="rounded-[22px] p-3 sm:p-8 dark:bg-zinc-900">
@@ -16,26 +17,36 @@ export default function Experiencia() {
                 </BackgroundGradient>
                 <BackgroundGradient className="rounded-[22px] p-3 sm:p-8 dark:bg-zinc-900">
                     <p className="text-balance">
-                        Soy un desarrollador apasionado enfocado en crear soluciones tecnológicas eficientes y elegantes. Me especializo en el desarrollo web Frontend, con experiencia en Backend.
+                        I have one year of experience in the development of web and mobile applications, using technologies such as React, Astro, Tailwind CSS, among others.
                     </p>
                 </BackgroundGradient>
                 <BackgroundGradient className="rounded-[22px] p-3 sm:p-8 dark:bg-zinc-900">
                     <p className="text-balance">
-                        Tengo experiencia en el desarrollo de aplicaciones web y móviles, utilizando tecnologías como React, Astro, Tailwind CSS, entre otras.
+                        I am committed to continuous learning and improving my skills, always seeking new opportunities to grow as a developer.
                     </p>
                 </BackgroundGradient>
             </div>
-            <div class="container mx-auto px-4 col-span-2">
-                <h2 class="text-3xl font-bold text-center mb-8">Experiencia</h2>
+            <div className="container mx-auto px-4 col-span-2">
+                <h2 className="text-3xl font-bold text-center mb-8">Experiencia</h2>
             </div>
-            <BackgroundGradient className="rounded-[22px] p-3 sm:p-8 dark:bg-zinc-900">
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <img src="/src/assets/DoffyWeb.png" alt="DoffyWeb" className="border-2 border-zinc-700 rounded-lg" />
-                    <br />
-                    <p className="text-balance">DoffyWeb</p>
-
-                </a>
-            </BackgroundGradient>
+            {experiencia.map((item, index) => (
+                <BackgroundGradient key={index} className="rounded-[22px] p-3 sm:p-8 dark:bg-zinc-900">
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
+                        <img src={item.imagen} alt={item.nombre} className="border-2 border-zinc-700 rounded-lg h-48 w-full object-cover" />
+                        <br />
+                        <p className="text-xl font-bold">{item.nombre}</p>
+                        <p className="text-balance">{item.descripcion}</p>
+                    </a>
+                    <div className="flex items-center gap-6">
+                        {item.tecnologias.map((tecnologia, index) => (
+                            <span key={index} className="w-14 h-14 mt-2 flex flex-col items-center">
+                                <img src={`/src/assets/${tecnologia}.svg`} alt={tecnologia} className="w-full border-2 border-zinc-700 rounded-lg p-2 bg-gradient-to-r from-blue-500 to-purple-500" />
+                                <p className="text-balance">{tecnologia}</p>
+                            </span>
+                        ))}
+                    </div>
+                </BackgroundGradient>
+            ))}
         </section>
     );
 }
