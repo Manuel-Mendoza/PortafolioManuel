@@ -1,5 +1,10 @@
 ---
 import "../styles/global.css";
+
+// Definir la ruta de la imagen para las etiquetas meta
+const ogImage = "/sticker.webp";
+const siteUrl = "https://portafolio-astro-black-nu.vercel.app";
+const fullImageUrl = new URL(ogImage, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -19,13 +24,13 @@ import "../styles/global.css";
     <!-- Twitter -->
     <meta property="twitter:title" content="Portafolio de Manuel Mendoza">
     <meta property="twitter:description" content="Portafolio de los desarrollos de Manuel Mendoza">
-    <meta property="twitter:image" content="https://portafolio-astro-black-nu.vercel.app/">
+    <meta property="twitter:image" content={fullImageUrl}>
     <meta property="twitter:card" content="summary_large_image">
     
     <!-- OG: Open Graph -->
     <meta property="og:title" content="Portafolio de Manuel Mendoza">
     <meta property="og:description" content="Soy un desarrollador de software especializado en frontend y con experiencia en backend.">
-    <meta property="og:image" content="https://portafolio-astro-black-nu.vercel.app/">
+    <meta property="og:image" content={fullImageUrl}>
     <meta property="og:url" content="https://portafolio-astro-black-nu.vercel.app/">
     <meta property="og:type" content="website">
   </head>
