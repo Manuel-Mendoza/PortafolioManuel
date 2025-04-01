@@ -10,13 +10,13 @@ export const Hero = () => {
     },
     {
       text: "</>",
-      className: "dark:text-purple-500",
+      className: "text-purple-500",
     },
   ];
   return (
     <div className="w-full flex justify-center min-h-full text-primary-content pt-24">
       <div className=" md:w-[90%] lg:w-[70%] flex flex-col">
-        <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900 w-full  :w-full">
+        <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-zinc-900 w-full  :w-full">
           <div className="flex flex-col  :w-full">
             <motion.div
               className="flex !z-10 animate-slide-in modern:text-wrap-balance"
@@ -28,15 +28,15 @@ export const Hero = () => {
                 delay: 0.2,
               }}
             >
-              <h1 className="lg:text-8xl font-bold modern:text-pretty md:text-7xl">
+              <h1 className="lg:text-8xl font-bold modern:text-pretty text-4xl">
                 Manuel Mendoza
               </h1>
-              <p className="lg:text-8xl text-purple-500 animate-bounce-slow  md:text-7xl">.</p>
+              <p className="lg:text-8xl text-purple-500 animate-bounce-slow text-4xl">.</p>
             </motion.div>
             <motion.img
               src="/saludo.webp"
               alt="yo"
-              className="!z-0 h-40 absolute right-0 bottom-0 object-center  :h-28"
+              className="!z-0 lg:h-40 absolute right-0 bottom-0 object-center h-24 md:block hidden"
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -47,7 +47,7 @@ export const Hero = () => {
             />
           </div>
           <TypewriterEffectSmooth className=" :my-1" words={words} />
-          <p className="text-center md:text-2xl lg:text-lg !z-20" style={{ fontFamily: 'monospace' }}>"Si lo puedes imaginar, lo puedes programar."</p>
+          <p className="text-center text-sm lg:text-lg !z-20" style={{ fontFamily: 'monospace' }}>"Si lo puedes imaginar, lo puedes programar."</p>
         </BackgroundGradient>
       </div>
     </div>
