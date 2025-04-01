@@ -10,14 +10,14 @@ export const Hero = () => {
     },
     {
       text: "</>",
-      className: "text-purple-500",
+      className: "text-white dark:text-purple-500",
     },
   ];
   return (
     <div className="w-full flex justify-center min-h-full text-primary-content pt-24">
-      <div className=" md:w-[90%] lg:w-[70%] flex flex-col">
-        <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-zinc-900 w-full  :w-full">
-          <div className="flex flex-col  :w-full">
+      <div className="w-[93%] lg:w-[70%] flex flex-col">
+        <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 dark:bg-zinc-900 w-full">
+          <div className="flex flex-col w-full">
             <motion.div
               className="flex !z-10 animate-slide-in modern:text-wrap-balance"
               initial={{ opacity: 0 }}
@@ -28,10 +28,10 @@ export const Hero = () => {
                 delay: 0.2,
               }}
             >
-              <h1 className="lg:text-8xl font-bold modern:text-pretty text-4xl">
+              <h1 className="lg:text-8xl font-bold modern:text-pretty text-4xl text-black dark:text-white">
                 Manuel Mendoza
               </h1>
-              <p className="lg:text-8xl text-purple-500 animate-bounce-slow text-4xl">.</p>
+              <p className="lg:text-8xl dark:text-purple-500 animate-bounce-slow text-4xl">.</p>
             </motion.div>
             <motion.img
               src="/saludo.webp"
@@ -46,8 +46,8 @@ export const Hero = () => {
               }}
             />
           </div>
-          <TypewriterEffectSmooth className=" :my-1" words={words} />
-          <p className="text-center text-sm lg:text-lg !z-20" style={{ fontFamily: 'monospace' }}>"Si lo puedes imaginar, lo puedes programar."</p>
+          <TypewriterEffectSmooth className="my-1" words={words} />
+          <p className="text-center text-sm lg:text-lg !z-20 text-black dark:text-white" style={{ fontFamily: 'monospace' }}>"Si lo puedes imaginar, lo puedes programar."</p>
         </BackgroundGradient>
       </div>
     </div>

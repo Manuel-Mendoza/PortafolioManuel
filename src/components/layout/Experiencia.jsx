@@ -11,7 +11,7 @@ export default function Experiencia() {
                 {aboutMe.map((item, index) => {
                     return (
                         <BackgroundGradient key={index} className="rounded-[22px] p-8 dark:bg-zinc-900">
-                            <p className="lg:text-base md:text-2xl">
+                            <p className="lg:text-base text-base text-black dark:text-white">
                                 {item.text}
                             </p>
                         </BackgroundGradient>
@@ -24,13 +24,13 @@ export default function Experiencia() {
             {experiencia.map((item, index) => (
                 <div className="mb-4 lg:mb-0">
                     <BackgroundGradient key={index} className="rounded-[22px] p-8 dark:bg-zinc-900">
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">
+                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
                             <img src={item.imagen} alt={item.nombre} className="border-2 border-zinc-700 rounded-lg lg:h-48 md:h-60 w-full object-cover" />
                             <br />
                             <p className="lg:text-xl md:text-4xl font-bold truncate">{item.nombre}</p>
                             <p className="text-balance lg:text-sm md:text-2xl">{item.descripcion}</p>
                         </a>
-                        <div className="flex items-center gap-6 mb-2">
+                        <div className="flex items-center gap-6 mb-2 text-black dark:text-white">
                             {item.tecnologias.map((tecnologia, index) => (
                                 <span key={index} className="w-14 h-14 mt-2 flex flex-col items-center">
                                     <img src={`/${tecnologia}.svg`} alt={tecnologia} className="w-full border-2 border-zinc-700 rounded-lg p-2 bg-gradient-to-r from-blue-500 to-purple-500" />
