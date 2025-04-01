@@ -49,7 +49,7 @@ export const Hero = () => {
               <h1 className="lg:text-8xl md:text-4xl text-3xl font-bold modern:text-pretty  text-black dark:text-white">
                 Manuel Mendoza
               </h1>
-              <p className="lg:text-8xl md:text-4xl text-2xl dark:text-purple-500 animate-bounce-slow">.</p>
+              <p className="lg:text-8xl md:text-4xl text-3xl dark:text-purple-500 animate-bounce-slow">.</p>
             </motion.div>
             <motion.img
               src="/saludo.webp"
