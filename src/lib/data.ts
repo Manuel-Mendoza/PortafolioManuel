@@ -7,6 +7,19 @@ export const redesSociales = [
     },
 ]
 
+// about me
+export const aboutMe = [
+    {
+        text: "I am a passionate developer focused on creating efficient and elegant technology solutions. I specialize in Frontend web development, with backend experience."
+    },
+    {
+        text: "I have one year of experience in the development of web and mobile applications, using technologies such as React, Astro, Tailwind CSS, among others."
+    },
+    {
+        text: " I am committed to continuous learning and improving my skills, always seeking new opportunities to grow as a developer."
+    },
+]
+
 // experiencia
 export const experiencia = [
     {
@@ -48,7 +61,7 @@ export const experiencia = [
         nombre: "LoremDiv",
         imagen: "/LoremDiv.png",
         descripcion: "Antigua pagina personal de FreeLancer de mi hermano",
-        tecnologias: ['React', 'Bootstrap','Sass'],
+        tecnologias: ['React', 'Bootstrap', 'Sass'],
         url: "https://lorem-div-page.vercel.app/",
     },
 ]
