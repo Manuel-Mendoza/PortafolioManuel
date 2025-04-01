@@ -28,7 +28,7 @@ export const Hero = () => {
                   rel="noreferrer"
                   key={index}
                   href={red.url}
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-black p-2 rounded-full text-lg cursor-pointer"
+                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-black dark:text-white p-2 rounded-full text-lg cursor-pointer"
                 >
                   {red.icon === "github" ? <FaGithub /> : red.icon === "x" ? <FaXTwitter /> : <FaInstagram />}
                 </a>
