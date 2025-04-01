@@ -1,9 +1,19 @@
 // redes sociales
 export const redesSociales = [
     {
-        id: 1,
         nombre: "GitHub",
-        url: "https://github.com/juanpabon",
+        url: "https://github.com/Manuel-Mendoza",
+        icon: "github",
+    },
+    {
+        nombre: "XTwitter",
+        url: "https://x.com/itjosemendoza?s=21",
+        icon: "x",
+    },
+    {
+        nombre: "Instagram",
+        url: "https://www.instagram.com/itmanuelmendoza?igsh=MXVzeG43ZTJpb3Y2&utm_source=qr",
+        icon: "instagram",
     },
 ]
 

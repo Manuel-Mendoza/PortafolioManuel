@@ -1,7 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
+import { FaGithub, FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { BackgroundGradient } from "../background-gradient";
 import { TypewriterEffectSmooth } from "./typewriter-effect";
+import { redesSociales } from "../../lib/data";
 
 export const Hero = () => {
   const words = [
@@ -17,6 +19,22 @@ export const Hero = () => {
     <div className="w-full flex justify-center min-h-full text-primary-content pt-24">
       <div className="w-[93%] lg:w-[70%] flex flex-col">
         <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 dark:bg-zinc-900 w-full">
+          <div className="absolute top-[-20px] right-4">
+            {/* Redes sociales */}
+            <div className="flex gap-4">
+              {redesSociales.map((red, index) => (
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  key={index}
+                  href={red.url}
+                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-black p-2 rounded-full text-lg cursor-pointer"
+                >
+                  {red.icon === "github" ? <FaGithub /> : red.icon === "x" ? <FaXTwitter /> : <FaInstagram />}
+                </a>
+              ))}
+            </div>
+          </div>
           <div className="flex flex-col w-full">
             <motion.div
               className="flex !z-10 animate-slide-in modern:text-wrap-balance"
@@ -28,7 +46,7 @@ export const Hero = () => {
                 delay: 0.2,
               }}
             >
-              <h1 className="lg:text-8xl md:text-4xl text-2xl font-bold modern:text-pretty  text-black dark:text-white">
+              <h1 className="lg:text-8xl md:text-4xl text-3xl font-bold modern:text-pretty  text-black dark:text-white">
                 Manuel Mendoza
               </h1>
               <p className="lg:text-8xl md:text-4xl text-2xl dark:text-purple-500 animate-bounce-slow">.</p>
