@@ -28,10 +28,10 @@ export const Hero = () => {
                 delay: 0.2,
               }}
             >
-              <h1 className="lg:text-8xl font-bold modern:text-pretty text-4xl text-black dark:text-white">
+              <h1 className="lg:text-8xl md:text-4xl text-2xl font-bold modern:text-pretty  text-black dark:text-white">
                 Manuel Mendoza
               </h1>
-              <p className="lg:text-8xl dark:text-purple-500 animate-bounce-slow text-4xl">.</p>
+              <p className="lg:text-8xl md:text-4xl text-2xl dark:text-purple-500 animate-bounce-slow">.</p>
             </motion.div>
             <motion.img
               src="/saludo.webp"
