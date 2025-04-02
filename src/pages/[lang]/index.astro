@@ -10,6 +10,8 @@ interface Props {
   lang: string;
 }
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   return Object.entries(listLang).map(([lang]) => ({
     params: { lang },
@@ -22,9 +24,9 @@ const { lang } = Astro.params as Props;
 
 <Layout>
   <EntryAnimation client:load>
-    <Navbar client:load />
+    <Navbar />
     <Hero client:load lang={lang} />
     <br/>
-    <Experiencia client:load />
+    <Experiencia client:load lang={lang} />
   </EntryAnimation>
 </Layout>

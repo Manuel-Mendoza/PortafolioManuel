@@ -1,8 +1,12 @@
+"use client";
 import { BackgroundGradient } from "../background-gradient.jsx";
 import { getData } from "../../lib/data";
+import { useTranslations } from "../../i18n/utils";
 
-export default function Experiencia() {
-    const data = getData('es');
+export default function Experiencia({ lang }) {
+    const t = useTranslations(lang);
+    const data = getData(lang);
+    
     return (
         <section className="md:w-[90%] my-16 lg:grid grid-cols-2 lg:gap-4 mx-auto px-4 md:flex md:flex-col gap-4">
             <BackgroundGradient className="rounded-[22px] p-4 sm:p-10  dark:bg-zinc-900 flex justify-center items-center ">
@@ -20,11 +24,11 @@ export default function Experiencia() {
                 })}
             </div>
             <div className="container mx-auto mt-4 px-4 col-span-2">
-                <h2 className="lg:text-3xl md:text-5xl font-bold text-center mb-8">Experiencia</h2>
+                <h2 className="lg:text-3xl md:text-5xl font-bold text-center mb-8">{t('experiencia').title}</h2>
             </div>
             {data.experiencia.map((item, index) => (
-                <div className="mb-4 lg:mb-0">
-                    <BackgroundGradient key={index} className="rounded-[22px] p-8 dark:bg-zinc-900">
+                <div key={index} className="mb-4 lg:mb-0">
+                    <BackgroundGradient className="rounded-[22px] p-8 dark:bg-zinc-900">
                         <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
                             <img src={item.imagen} alt={item.nombre} className="border-2 border-zinc-700 rounded-lg lg:h-48 md:h-60 w-full object-cover" />
                             <br />
@@ -41,7 +45,6 @@ export default function Experiencia() {
                         </div>
                     </BackgroundGradient>
                 </div>
-
             ))}
         </section>
     );
