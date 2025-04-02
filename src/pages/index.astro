@@ -1,0 +1,20 @@
+---
+// Esta página solo existe para manejar la redirección inicial
+// El middleware se encargará de redirigir al idioma correcto
+import { defaultLang } from "../i18n/lang";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content={`0;url=/${defaultLang}/`} />
+  <title>Redirigiendo...</title>
+</head>
+<body>
+  <script is:inline define:vars={{ defaultLang }}>
+    window.location.pathname = `/${defaultLang}/`;
+  </script>
+</body>
+</html>
