@@ -1,11 +1,24 @@
 ---
-// Componente Navbar usando DaisyUI
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { listLang } from "../../i18n/lang";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <nav class="navbar bg-base-200">
   <div class="navbar-start"></div>
   <div class="navbar-center">
-    <h2 class="lg:text-2xl font-bold md:text-5xl">Bienvenido a mi Portafolio</h2>
+    <h2 class="lg:text-2xl font-bold md:text-5xl">{t("nav")}</h2>
   </div>
-  <div class="navbar-end"></div>
+  <div class="navbar-end">
+    <!-- Idiomas -->
+    <LanguageSwitcher lang={lang} listLang={listLang} />
+  </div>
 </nav>
+
+<style>
+  .select-group {
+    width: fit-content;
+  }
+</style>
