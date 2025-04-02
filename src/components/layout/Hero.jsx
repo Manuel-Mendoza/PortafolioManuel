@@ -5,10 +5,57 @@ import { BackgroundGradient } from "../background-gradient";
 import { TypewriterEffectSmooth } from "./typewriter-effect";
 import { getData } from "../../lib/data";
 import { useTranslations } from "../../i18n/utils";
+import { useState } from "react";
+
+const SocialIcon = ({ icon, nombre, url }) => {
+  const [show, setShow] = useState(false);
+  
+  const getIcon = (iconName) => {
+    const icons = {
+      github: <FaGithub />,
+      x: <FaXTwitter />,
+      instagram: <FaInstagram />,
+      download: <FaDownload />
+    };
+    return icons[iconName] || icons.github;
+  };
+
+  return (
+    <a
+      target="_blank"
+      rel="noreferrer"
+      href={url}
+      className="bg-gradient-to-r from-blue-500 to-purple-500 text-black dark:text-white p-2 rounded-full text-lg cursor-pointer"
+    >
+      <span
+        onMouseEnter={() => setShow(true)}
+        onMouseLeave={() => setShow(false)}
+        className={`flex items-center justify-center ${show ? "gap-2" : ""}`}
+      >
+        {getIcon(icon)}
+        <motion.p
+          initial={{ opacity: 0, width: 0 }}
+          animate={{
+            opacity: show ? 1 : 0,
+            width: show ? 'auto' : 0
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut"
+          }}
+          className="text-sm overflow-hidden whitespace-nowrap"
+        >
+          {nombre}
+        </motion.p>
+      </span>
+    </a>
+  );
+};
 
 export const Hero = ({ lang = 'es' }) => {
   const t = useTranslations(lang);
   const data = getData(lang);
+  const [show, setShow] = useState(false);
   const words = [
     {
       text: t("hero").title,
@@ -26,15 +73,12 @@ export const Hero = ({ lang = 'es' }) => {
             {/* Redes sociales */}
             <div className="flex gap-4">
               {data.redesSociales.map((red, index) => (
-                <a
-                  target="_blank"
-                  rel="noreferrer"
+                <SocialIcon
                   key={index}
-                  href={red.url}
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-black dark:text-white p-2 rounded-full text-lg cursor-pointer"
-                >
-                  {red.icon === "github" ? <FaGithub /> : red.icon === "x" ? <FaXTwitter /> : red.icon === "instagram" ? <FaInstagram /> : <FaDownload />}
-                </a>
+                  icon={red.icon}
+                  nombre={red.nombre}
+                  url={red.url}
+                />
               ))}
             </div>
           </div>
