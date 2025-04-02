@@ -3,12 +3,15 @@ import { motion } from "framer-motion";
 import { FaGithub, FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { BackgroundGradient } from "../background-gradient";
 import { TypewriterEffectSmooth } from "./typewriter-effect";
-import { redesSociales } from "../../lib/data";
+import { getData } from "../../lib/data";
+import { useTranslations } from "../../i18n/utils";
 
-export const Hero = () => {
+export const Hero = ({ lang = 'es' }) => {
+  const t = useTranslations(lang);
+  const data = getData(lang);
   const words = [
     {
-      text: "Software Developer",
+      text: t("hero").title,
     },
     {
       text: "</>",
@@ -22,7 +25,7 @@ export const Hero = () => {
           <div className="absolute top-[-20px] right-4">
             {/* Redes sociales */}
             <div className="flex gap-4">
-              {redesSociales.map((red, index) => (
+              {data.redesSociales.map((red, index) => (
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -65,7 +68,7 @@ export const Hero = () => {
             />
           </div>
           <TypewriterEffectSmooth className="my-1" words={words} />
-          <p className="text-center text-sm lg:text-lg !z-20 text-black dark:text-white" style={{ fontFamily: 'monospace' }}>"Si lo puedes imaginar, lo puedes programar."</p>
+          <p className="text-center text-sm lg:text-lg !z-20 text-black dark:text-white" style={{ fontFamily: 'monospace' }}>{t("hero").mesagge}</p>
         </BackgroundGradient>
       </div>
     </div>

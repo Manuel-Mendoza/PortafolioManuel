@@ -1,14 +1,15 @@
 import { BackgroundGradient } from "../background-gradient.jsx";
-import { experiencia, aboutMe } from "../../lib/data.ts";
+import { getData } from "../../lib/data";
 
 export default function Experiencia() {
+    const data = getData('es');
     return (
         <section className="md:w-[90%] my-16 lg:grid grid-cols-2 lg:gap-4 mx-auto px-4 md:flex md:flex-col gap-4">
             <BackgroundGradient className="rounded-[22px] p-4 sm:p-10  dark:bg-zinc-900 flex justify-center items-center ">
                 <img src="/real.JPG" alt="yo" className={`h-96 rounded-lg border-2 border-zinc-700`} />
             </BackgroundGradient>
             <div className="flex flex-col justify-between gap-4 mt-4 lg:mt-0">
-                {aboutMe.map((item, index) => {
+                {data.aboutMe.map((item, index) => {
                     return (
                         <BackgroundGradient key={index} className="rounded-[22px] p-8 dark:bg-zinc-900">
                             <p className="lg:text-base text-base text-black dark:text-white">
@@ -21,7 +22,7 @@ export default function Experiencia() {
             <div className="container mx-auto mt-4 px-4 col-span-2">
                 <h2 className="lg:text-3xl md:text-5xl font-bold text-center mb-8">Experiencia</h2>
             </div>
-            {experiencia.map((item, index) => (
+            {data.experiencia.map((item, index) => (
                 <div className="mb-4 lg:mb-0">
                     <BackgroundGradient key={index} className="rounded-[22px] p-8 dark:bg-zinc-900">
                         <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-black dark:text-white">
