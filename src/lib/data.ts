@@ -21,6 +21,11 @@ export const getData = (lang: keyof typeof listLang) => {
             url: "https://www.instagram.com/itmanuelmendoza?igsh=MXVzeG43ZTJpb3Y2&utm_source=qr",
             icon: "instagram",
         },
+        {
+            nombre: "Curriculum",
+            url: "/Jose-Manuel-Campos-Mendoza.pdf",
+            icon: "download",
+        },
     ];
 
     // about me

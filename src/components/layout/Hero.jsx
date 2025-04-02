@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaGithub, FaXTwitter, FaInstagram } from "react-icons/fa6";
+import { FaGithub, FaXTwitter, FaInstagram, FaDownload } from "react-icons/fa6";
 import { BackgroundGradient } from "../background-gradient";
 import { TypewriterEffectSmooth } from "./typewriter-effect";
 import { getData } from "../../lib/data";
@@ -33,7 +33,7 @@ export const Hero = ({ lang = 'es' }) => {
                   href={red.url}
                   className="bg-gradient-to-r from-blue-500 to-purple-500 text-black dark:text-white p-2 rounded-full text-lg cursor-pointer"
                 >
-                  {red.icon === "github" ? <FaGithub /> : red.icon === "x" ? <FaXTwitter /> : <FaInstagram />}
+                  {red.icon === "github" ? <FaGithub /> : red.icon === "x" ? <FaXTwitter /> : red.icon === "instagram" ? <FaInstagram /> : <FaDownload />}
                 </a>
               ))}
             </div>
