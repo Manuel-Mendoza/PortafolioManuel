@@ -5,7 +5,7 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.astro"
-, "src/components/layout/Experiencia.jsx"  ],
+, "src/components/layout/Experiencia.jsx", "src/components/layout/LanguageSwitcher.jsx"  ],
   "exclude": [
     "dist"
   ],

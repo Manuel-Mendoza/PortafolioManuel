@@ -1,7 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import { listLang } from "../../i18n/lang";
-import LanguageSwitcher from "./LanguageSwitcher.astro";
+import LanguageSwitcher from "./LanguageSwitcher";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -13,12 +13,16 @@ const t = useTranslations(lang);
   </div>
   <div class="navbar-end">
     <!-- Idiomas -->
-    <LanguageSwitcher lang={lang} listLang={listLang} />
+    <LanguageSwitcher lang={lang} listLang={listLang} client:load />
   </div>
 </nav>
 
 <style>
   .select-group {
     width: fit-content;
+  }
+  
+  .select {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
 </style>

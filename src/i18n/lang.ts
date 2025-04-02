@@ -1,6 +1,6 @@
 export const listLang: Record<string, string> = {
-    es: '🇪🇸',
-    en: '🇬🇧',
+    es: 'Español',
+    en: 'English',
 }
 
 export const defaultLang: string = 'es';
