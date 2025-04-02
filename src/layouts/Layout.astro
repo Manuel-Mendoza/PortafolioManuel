@@ -1,9 +1,12 @@
 ---
 import "../styles/global.css";
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="es" data-theme="dark" style="color-scheme: light dark;">
+<html lang={lang} data-theme="dark" style="color-scheme: light dark;">
   <head>
     <title>Manuel Mendoza</title>
     <meta charset="UTF-8" />

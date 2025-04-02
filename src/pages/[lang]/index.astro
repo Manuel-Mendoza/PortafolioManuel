@@ -23,7 +23,7 @@ const { lang } = Astro.params as Props;
 <Layout>
   <EntryAnimation client:load>
     <Navbar client:load />
-    <Hero client:load />
+    <Hero client:load lang={lang} />
     <br/>
     <Experiencia client:load />
   </EntryAnimation>
