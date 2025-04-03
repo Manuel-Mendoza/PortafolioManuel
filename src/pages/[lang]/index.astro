@@ -2,8 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/layout/Navbar.astro";
 import { EntryAnimation } from "../../components/EntryAnimation";
-import { Hero } from "../../components/layout/Hero"; 
-import Experiencia from "../../components/layout/Experiencia.jsx"; 
+import { Hero } from "../../components/layout/Hero";
+import Experiencia from "../../components/layout/Experiencia.jsx";
 import { listLang } from "../../i18n/lang";
 
 interface Props {
@@ -15,7 +15,7 @@ export const prerender = true;
 export async function getStaticPaths() {
   return Object.entries(listLang).map(([lang]) => ({
     params: { lang },
-    props: { lang }
+    props: { lang },
   }));
 }
 
@@ -26,7 +26,7 @@ const { lang } = Astro.params as Props;
   <EntryAnimation client:load>
     <Navbar />
     <Hero client:load lang={lang} />
-    <br/>
+    <br />
     <Experiencia client:load lang={lang} />
   </EntryAnimation>
 </Layout>
