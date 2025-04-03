@@ -1,20 +1,4 @@
 ---
 import { defaultLang } from "../i18n/lang";
+Astro.redirect(`/${defaultLang}/`)
 ---
-
-<!doctype html>
-<html lang={defaultLang}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      const userLang = navigator.language.split("-")[0];
-      const supportedLangs = ["es", "en"];
-      const lang = supportedLangs.includes(userLang) ? userLang : "es";
-      window.location.pathname = `/${lang}/`;
-    </script>
-  </head>
-  <body>
-    <p>Redirigiendo...</p>
-  </body>
-</html>
