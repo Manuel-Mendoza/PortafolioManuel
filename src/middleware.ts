@@ -2,7 +2,7 @@ import { defineMiddleware } from "astro:middleware";
 import { defaultLang, listLang } from "./i18n/lang";
 
 export const onRequest = defineMiddleware((context, next) => {
-  const { pathname, origin } = new URL(context.request.url);
+  const { pathname } = new URL(context.request.url);
 
   // Si ya estamos en una ruta con idioma, continuamos
   if (pathname.match(/^\/(es|en)\/?/)) {
@@ -28,6 +28,6 @@ export const onRequest = defineMiddleware((context, next) => {
   }
 
   // Redirigir a la ruta con el idioma
-  const domain = origin;
+  const domain =  'https://portafio-astro.vercel.app/';
   return Response.redirect(new URL(`/${preferredLang}${pathname}`, domain));
 });
