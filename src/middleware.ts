@@ -29,5 +29,6 @@ export const onRequest = defineMiddleware((context, next) => {
 
   // Redirigir a la ruta con el idioma
   const domain =  'https://portafio-astro.vercel.app/';
+  const localDomain =  'http://localhost:4321/';
   return Response.redirect(new URL(`/${preferredLang}${pathname}`, domain));
 });
