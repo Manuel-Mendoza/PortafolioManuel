@@ -8,31 +8,34 @@ import { SEO } from "astro-seo";
 ---
 
 <!doctype html>
-<html lang={lang} data-theme="dark" style="color-scheme: light dark;">
-  <SEO
-    title="Manuel Mendoza"
-    description="Soy un desarrollador de software especializado en frontend y con experiencia en backend."
-    openGraph={{
-      basic: {
+<html lang={lang} data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <SEO
+      title="Manuel Mendoza"
+      description="Soy un desarrollador de software especializado en frontend y con experiencia en backend."
+      openGraph={{
+        basic: {
+          title: "Manuel Mendoza",
+          type: "website",
+          image: "https://imgfz.com/i/hZoi5CE.png",
+          url: "https://portafio-astro.vercel.app",
+        },
+        optional: {
+          description:
+            "Soy un desarrollador de software especializado en frontend y con experiencia en backend.",
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
         title: "Manuel Mendoza",
-        type: "website",
-        image: "https://imgfz.com/i/hZoi5CE.png",
-        url: "https://portafio-astro.vercel.app",
-      },
-      optional: {
         description:
           "Soy un desarrollador de software especializado en frontend y con experiencia en backend.",
-      },
-    }}
-    twitter={{
-      card: "summary_large_image",
-      title: "Manuel Mendoza",
-      description:
-        "Soy un desarrollador de software especializado en frontend y con experiencia en backend.",
-      image: "https://imgfz.com/i/hZoi5CE.png",
-      creator: "@itManuelMendoza",
-    }}
-  />
+        image: "https://imgfz.com/i/hZoi5CE.png",
+        creator: "@itManuelMendoza",
+      }}
+    />
+  </head>
   <body>
     <EntryAnimation client:load>
       <slot />
