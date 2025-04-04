@@ -9,7 +9,7 @@ import { SEO } from "astro-seo";
 
 <!doctype html>
 <html lang={lang} data-theme="dark" style="color-scheme: light dark;">
-  {/* <SEO
+  <SEO
     title="Manuel Mendoza"
     description="Soy un desarrollador de software especializado en frontend y con experiencia en backend."
     openGraph={{
@@ -17,20 +17,22 @@ import { SEO } from "astro-seo";
         title: "Manuel Mendoza",
         type: "website",
         image: "https://imgfz.com/i/hZoi5CE.png",
-        url: "https://portafio-astro.vercel.app"
+        url: "https://portafio-astro.vercel.app",
       },
       optional: {
-        description: "Soy un desarrollador de software especializado en frontend y con experiencia en backend."
-      }
+        description:
+          "Soy un desarrollador de software especializado en frontend y con experiencia en backend.",
+      },
     }}
     twitter={{
       card: "summary_large_image",
       title: "Manuel Mendoza",
-      description: "Soy un desarrollador de software especializado en frontend y con experiencia en backend.",
+      description:
+        "Soy un desarrollador de software especializado en frontend y con experiencia en backend.",
       image: "https://imgfz.com/i/hZoi5CE.png",
-      creator: "@itManuelMendoza"
+      creator: "@itManuelMendoza",
     }}
-  /> */}
+  />
   <body>
     <EntryAnimation client:load>
       <slot />
