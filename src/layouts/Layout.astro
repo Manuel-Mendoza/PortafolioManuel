@@ -17,26 +17,18 @@ import { SEO } from "astro-seo";
         title: "Manuel Mendoza",
         type: "website",
         image: "https://imgfz.com/i/hZoi5CE.png",
+        url: "https://portafio-astro.vercel.app"
       },
+      optional: {
+        description: "Soy un desarrollador de software especializado en frontend y con experiencia en backend."
+      }
     }}
     twitter={{
-      creator: "@itManuelMendoza",
       card: "summary_large_image",
-    }}
-    extend={{
-      link: [{ rel: "icon", href: "/sticker.webp" }],
-      meta: [
-        {
-          name: "twitter:image",
-          content: "https://imgfz.com/i/hZoi5CE.png",
-        },
-        { name: "twitter:title", content: "Manuel Mendoza" },
-        {
-          name: "twitter:description",
-          content:
-            "Soy un desarrollador de software especializado en frontend y con experiencia en backend.",
-        },
-      ],
+      title: "Manuel Mendoza",
+      description: "Soy un desarrollador de software especializado en frontend y con experiencia en backend.",
+      image: "https://imgfz.com/i/hZoi5CE.png",
+      creator: "@itManuelMendoza"
     }}
   />
   <body>
