@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/layout/Navbar.astro";
-import { EntryAnimation } from "../../components/EntryAnimation";
 import { Hero } from "../../components/layout/Hero";
 import Experiencia from "../../components/layout/Experiencia.jsx";
 import { listLang } from "../../i18n/lang";
@@ -23,10 +22,8 @@ const { lang } = Astro.params as Props;
 ---
 
 <Layout>
-  <EntryAnimation client:load>
-    <Navbar />
-    <Hero client:load lang={lang} />
-    <br />
-    <Experiencia client:load lang={lang} />
-  </EntryAnimation>
+  <Navbar />
+  <Hero client:load lang={lang} />
+  <br />
+  <Experiencia client:load lang={lang} />
 </Layout>
