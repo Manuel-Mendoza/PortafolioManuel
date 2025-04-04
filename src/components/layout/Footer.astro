@@ -1,5 +1,5 @@
 ---
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaMoon, FaSun,FaComputer } from "react-icons/fa6";
 ---
 
 <footer class="footer">
@@ -23,9 +23,58 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
         <div class="flex justify-center gap-2">
             <!-- Switch theme mode -->
             <div class="flex gap-2">
-                <p>Theme:</p>
-                <input type="checkbox" name="" id="" />
+                <button onclick="window.toggleTheme('dark')"><FaMoon /> Dark</button>
+                <button onclick="window.toggleTheme('light')"><FaSun /> Light</button>
+                <button onclick="window.toggleTheme('system')"><FaComputer /> System</button>
             </div>
         </div>
     </div>
 </footer>
+
+<script>
+    // Declaración de tipo para la función
+    type ThemeMode = 'dark' | 'light' | 'system';
+
+    // Extender la interfaz Window
+    declare global {
+      interface Window {
+        toggleTheme: (theme: ThemeMode) => void;
+      }
+    }
+
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (typeof window !== "undefined") {
+        // Check initial theme
+        if (
+            localStorage.theme === "dark" ||
+            (!("theme" in localStorage) &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+
+        // Function to toggle theme
+        const toggleTheme = (theme: ThemeMode) => {
+          const html = document.documentElement;
+          if (theme === "dark") {
+            html.classList.add("dark");
+            localStorage.theme = "dark";
+          } else if (theme === "light") {
+            html.classList.remove("dark"); 
+            localStorage.theme = "light";
+          } else {
+            localStorage.removeItem("theme");
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+              html.classList.add("dark");
+            } else {
+              html.classList.remove("dark");
+            }
+          }
+        };
+
+        // Expose toggle function to window
+        window.toggleTheme = toggleTheme;
+    }
+</script>

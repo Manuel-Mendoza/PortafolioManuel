@@ -2,11 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos adicionales si es necesario */
+@layer utilities {
+  .bg-light-gradient {
+    background-image: theme('backgroundImage.light-gradient');
+    background-size: 240% 240%;
+    animation: gradient-animation 40s ease infinite;
+  }
 
-html {
-  background-image: theme('backgroundImage.global-gradient');
-  user-select: none;
-
+  .bg-dark-gradient {
+    background-image: theme('backgroundImage.dark-gradient');
+  }
 }
 
+html {
+  @apply bg-light-gradient;
+}
+
+.dark {
+  @apply bg-dark-gradient;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

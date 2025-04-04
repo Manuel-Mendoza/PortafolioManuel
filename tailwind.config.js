@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
@@ -17,7 +18,7 @@ module.exports = {
           900: '#0c4a6e',
           950: '#082f49',
         },
-      
+
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -65,9 +66,10 @@ module.exports = {
           },
         },
       },
-      
+
       backgroundImage: {
-        'global-gradient': 'linear-gradient(to bottom, #24243e, #302b63, #0f0c29)',
+        'dark-gradient': 'linear-gradient(to bottom, #24243e, #302b63, #0f0c29)',
+        'light-gradient': 'linear-gradient(246deg,#e49e25,#2b4cc4,#61ea80,#8c6d8f)'
       },
     },
   },
