@@ -48,7 +48,7 @@ export const getData = (lang: keyof typeof listLang) => {
             imagen: "/DoffyWeb.png",
             descripcion: t("experiencia").descripcion.item1,
             tecnologias: ["Astro", "Tailwind", "React"],
-            url: "#",
+            url: "https://d-projects.vercel.app",
         },
         {
             nombre: "VigasApp",
