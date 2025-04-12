@@ -4,18 +4,19 @@
 
 @layer utilities {
   .bg-light-gradient {
-    background-image: theme('backgroundImage.light-gradient');
+    background-image: theme("backgroundImage.light-gradient");
     background-size: 240% 240%;
     animation: gradient-animation 40s ease infinite;
   }
 
   .bg-dark-gradient {
-    background-image: theme('backgroundImage.dark-gradient');
+    background-image: theme("backgroundImage.dark-gradient");
   }
 }
 
 html {
   @apply bg-light-gradient;
+  user-select: none;
 }
 
 .dark {

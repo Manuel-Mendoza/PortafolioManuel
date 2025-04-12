@@ -1,7 +1,7 @@
 "use client";
 import { BackgroundGradient } from "../background-gradient.jsx";
-import { getData } from "../../lib/data";
-import { useTranslations } from "../../i18n/utils";
+import { getData } from "../../lib/data.js";
+import { useTranslations } from "../../i18n/utils.js";
 
 export default function Experiencia({ lang }) {
     const t = useTranslations(lang);

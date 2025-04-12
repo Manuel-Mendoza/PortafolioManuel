@@ -4,6 +4,9 @@ import { listLang } from "../../i18n/lang";
 import LanguageSwitcher from "./LanguageSwitcher";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+import { FaRegCommentDots } from "react-icons/fa";
+import Form from "../Form";
+import { FaWindowClose } from "react-icons/fa";
 ---
 
 <nav class="navbar bg-base-200">
@@ -15,4 +18,40 @@ const t = useTranslations(lang);
     <!-- Idiomas -->
     <LanguageSwitcher lang={lang} listLang={listLang} client:load />
   </div>
+  <div
+    class="fixed bottom-2 right-2 p-4 bg-base-200 rounded-full z-20 cursor-pointer hover:scale-105 transition-all duration-200 group"
+    onclick="document.getElementById('contact-modal')?.showModal?.()"
+  >
+    <div class="flex items-center">
+      <FaRegCommentDots className="text-xl" />
+      <p
+        class="text-sm whitespace-nowrap max-w-0 overflow-hidden transition-all duration-300 group-hover:max-w-[100px] group-hover:ml-2"
+      >
+        Contactar
+      </p>
+    </div>
+  </div>
 </nav>
+
+<dialog id="contact-modal" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+        <FaWindowClose className="text-2xl cursor-pointer" />
+      </button>
+    </form>
+    <Form />
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
+
+<style>
+  .group:hover p {
+    opacity: 1;
+    transition:
+      opacity 0.3s ease-in-out,
+      max-width 0.3s ease-in-out;
+  }
+</style>
