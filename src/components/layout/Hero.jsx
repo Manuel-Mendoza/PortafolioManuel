@@ -9,13 +9,13 @@ import { useState } from "react";
 
 const SocialIcon = ({ icon, nombre, url }) => {
   const [show, setShow] = useState(false);
-  
+
   const getIcon = (iconName) => {
     const icons = {
       github: <FaGithub />,
       x: <FaXTwitter />,
       instagram: <FaInstagram />,
-      download: <FaDownload />
+      download: <FaDownload />,
     };
     return icons[iconName] || icons.github;
   };
@@ -37,11 +37,11 @@ const SocialIcon = ({ icon, nombre, url }) => {
           initial={{ opacity: 0, width: 0 }}
           animate={{
             opacity: show ? 1 : 0,
-            width: show ? 'auto' : 0
+            width: show ? "auto" : 0,
           }}
           transition={{
             duration: 0.3,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           className="text-sm overflow-hidden whitespace-nowrap"
         >
@@ -52,7 +52,7 @@ const SocialIcon = ({ icon, nombre, url }) => {
   );
 };
 
-export const Hero = ({ lang = 'es' }) => {
+export const Hero = ({ lang = "es" }) => {
   const t = useTranslations(lang);
   const data = getData(lang);
   const [show, setShow] = useState(false);
@@ -96,10 +96,12 @@ export const Hero = ({ lang = 'es' }) => {
               <h1 className="lg:text-8xl md:text-4xl text-3xl font-bold modern:text-pretty  text-black dark:text-white">
                 Manuel Mendoza
               </h1>
-              <p className="lg:text-8xl md:text-4xl text-3xl dark:text-purple-500 animate-bounce-slow">.</p>
+              <p className="lg:text-8xl md:text-4xl text-3xl dark:text-purple-500 animate-bounce-slow">
+                .
+              </p>
             </motion.div>
             <motion.img
-              src={new URL("../../../../public/saludo.webp", import.meta.url).href}
+              src={new URL("/saludo.webp", import.meta.url).href}
               alt="yo"
               className="!z-0 lg:h-40 absolute right-0 bottom-0 object-center h-24 md:block hidden"
               initial={{ opacity: 0, y: 100 }}
@@ -112,7 +114,12 @@ export const Hero = ({ lang = 'es' }) => {
             />
           </div>
           <TypewriterEffectSmooth className="my-1" words={words} />
-          <p className="text-center text-sm lg:text-lg !z-20 text-black dark:text-white" style={{ fontFamily: 'monospace' }}>{t("hero").mesagge}</p>
+          <p
+            className="text-center text-sm lg:text-lg !z-20 text-black dark:text-white"
+            style={{ fontFamily: "monospace" }}
+          >
+            {t("hero").mesagge}
+          </p>
         </BackgroundGradient>
       </div>
     </div>
