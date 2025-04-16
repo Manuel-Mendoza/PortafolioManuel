@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const post: APIRoute = async ({ request }) => {
   try {
@@ -29,11 +29,13 @@ export const post: APIRoute = async ({ request }) => {
 
     return new Response(JSON.stringify({
       success: true,
-      message: 'Email enviado correctamente'
+      message: 'Email enviado correctamente',
+      data
     }), {
       status: 200,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       }
     });
 

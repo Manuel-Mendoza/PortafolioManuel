@@ -20,15 +20,17 @@ export default function Form() {
         }),
       });
 
-      if (response.ok) {
-        alert('Mensaje enviado con éxito!');
-        form.reset();
-      } else {
-        throw new Error('Error al enviar el mensaje');
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.message || 'Error al enviar el mensaje');
       }
+
+      alert('Mensaje enviado con éxito!');
+      form.reset();
     } catch (error) {
-      alert('Error al enviar el mensaje. Por favor intente nuevamente.');
-      console.error(error);
+      console.error('Error:', error);
+      alert(error.message || 'Error al enviar el mensaje. Por favor intente nuevamente.');
     }
   };
 
