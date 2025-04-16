@@ -4,13 +4,17 @@
     ".astro/types.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.astro"
-, "src/components/layout/Experiencia.jsx", "src/components/layout/LanguageSwitcher.jsx"  ],
+    "src/**/*.astro",
+    "src/components/layout/Experiencia.jsx",
+    "src/components/layout/LanguageSwitcher.jsx"
+  ],
   "exclude": [
     "dist"
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "module": "es2020",
+    "moduleResolution": "node16"
   }
 }

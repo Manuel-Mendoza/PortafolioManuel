@@ -1,7 +1,8 @@
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+// @ts-ignore
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Handler para OPTIONS (necesario para CORS)
 export const OPTIONS: APIRoute = async () => {
@@ -14,6 +15,8 @@ export const OPTIONS: APIRoute = async () => {
     }
   });
 };
+
+export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
   console.log('Request recibida en /api/send-email');
