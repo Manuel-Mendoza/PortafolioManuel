@@ -101,7 +101,7 @@ export const Hero = ({ lang = "es" }) => {
               </p>
             </motion.div>
             <motion.img
-              src={new URL("../../../../public/saludo.webp", import.meta.url).href}
+              src="/saludo.webp"
               alt="yo"
               className="!z-0 lg:h-40 absolute right-0 bottom-0 object-center h-24 md:block hidden"
               initial={{ opacity: 0, y: 100 }}

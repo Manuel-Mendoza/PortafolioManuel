@@ -8,6 +8,11 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   output: 'static',
   base: '/',
+  vite: {
+    build: {
+      assetsInlineLimit: 0
+    }
+  },
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
