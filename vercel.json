@@ -1,5 +1,4 @@
 {
-  
   "version": 2,
   "builds": [
     {
@@ -10,7 +9,7 @@
       }
     },
     {
-      "src": "src/pages/api/send-email.ts",
+      "src": "api/send-email.js", 
       "use": "@vercel/node"
     }
   ],
@@ -35,12 +34,6 @@
     {
       "src": "/en/(.*)", 
       "dest": "/en/$1"
-    },
-    {
-      "src": "/_astro/(.*)",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
     },
     {
       "src": "/(.*\\.(webp|png|jpg|jpeg|svg))",

@@ -1,8 +1,12 @@
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
-// @ts-ignore
-const resend = new Resend(process.env.RESEND_API_KEY);
+console.log('Environment variables:', process.env);
+const apiKey = process.env.RESEND_API_KEY || import.meta.env.RESEND_API_KEY;
+if (!apiKey) {
+  console.error('RESEND_API_KEY no está configurada');
+}
+const resend = new Resend(apiKey);
 
 // Handler para OPTIONS (necesario para CORS)
 export const OPTIONS: APIRoute = async () => {

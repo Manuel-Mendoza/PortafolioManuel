@@ -1,20 +1,7 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.astro",
-    "src/components/layout/Experiencia.jsx",
-    "src/components/layout/LanguageSwitcher.jsx"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "module": "es2020",
-    "moduleResolution": "node16"
+    "jsxImportSource": "react"
   }
 }
