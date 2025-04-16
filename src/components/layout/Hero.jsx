@@ -99,7 +99,7 @@ export const Hero = ({ lang = 'es' }) => {
               <p className="lg:text-8xl md:text-4xl text-3xl dark:text-purple-500 animate-bounce-slow">.</p>
             </motion.div>
             <motion.img
-              src="/saludo.webp"
+              src={new URL("../../../../public/saludo.webp", import.meta.url).href}
               alt="yo"
               className="!z-0 lg:h-40 absolute right-0 bottom-0 object-center h-24 md:block hidden"
               initial={{ opacity: 0, y: 100 }}
