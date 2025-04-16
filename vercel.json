@@ -19,12 +19,20 @@
       "dest": "/api/send-email"
     },
     {
-      "src": "^/es(/.*)?$",
+      "src": "/es",
       "dest": "/es/index.html"
     },
     {
-      "src": "^/en(/.*)?$",
+      "src": "/es/(.*)",
+      "dest": "/es/$1"
+    },
+    {
+      "src": "/en",
       "dest": "/en/index.html"
+    },
+    {
+      "src": "/en/(.*)", 
+      "dest": "/en/$1"
     },
     {
       "src": "/(.*)",
