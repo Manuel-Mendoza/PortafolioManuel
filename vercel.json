@@ -17,6 +17,7 @@
   "routes": [
     {
       "src": "/api/send-email",
+      "methods": ["POST"],
       "dest": "/api/send-email"
     },
     {
