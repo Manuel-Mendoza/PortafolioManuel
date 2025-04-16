@@ -1,71 +1,59 @@
-import { FaWindowClose } from "react-icons/fa";
+import { useState } from 'react';
 
-export default function Form() {
-  const handleSubmit = async (e: React.FormEvent) => {
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = e.currentTarget as HTMLFormElement;
-    const formData = new FormData(form);
-    console.log('Form data:', Object.fromEntries(formData.entries()));
+    setIsSubmitting(true);
     
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
         },
         body: JSON.stringify({
+          from: 'Portafolio <onboarding@resend.dev>',
           to: 'developermanuel@icloud.com',
-          from: formData.get('email'),
-          name: formData.get('name'),
-          message: formData.get('message')
-        }),
+          subject: `Nuevo mensaje de ${formData.name}`,
+          html: `
+            <strong>Nuevo mensaje de contacto</strong>
+            <p><strong>Nombre:</strong> ${formData.name}</p>
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Mensaje:</strong> ${formData.message}</p>
+          `,
+          replyTo: formData.email
+        })
       });
 
-      const result = await response.json();
+      if (!response.ok) throw new Error('Error al enviar');
       
-      if (!response.ok) {
-        throw new Error(result.message || 'Error al enviar el mensaje');
-      }
-
-      alert('Mensaje enviado con éxito!');
-      form.reset();
-    } catch (error: any) {
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
       console.error('Error:', error);
-      alert(error.message || 'Error al enviar el mensaje. Por favor intente nuevamente.');
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <form 
-      onSubmit={handleSubmit}
-      method="POST"
-      className="bg-base-200 w-full grid grid-cols-2 gap-4 p-8 rounded-lg justify-items-center"
-    >
-      <h1 className="text-center text-2xl font-bold col-span-2">Contactame</h1>
-      <input
-        type="text"
-        name="name"
-        placeholder="Nombre"
-        className="input input-bordered input-success w-full max-w-xs"
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        className="input input-bordered input-success w-full max-w-xs"
-        required
-      />
-      <textarea
-        name="message"
-        id="message"
-        placeholder="Escribe tu mensaje"
-        rows={5}
-        className="textarea textarea-bordered w-full max-w-full col-span-2"
-      ></textarea>
-      <button type="submit" className="btn btn-primary col-span-2 mt-4">
-        Enviar
+    <form onSubmit={handleSubmit}>
+      {/* Campos del formulario */}
+      <button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
       </button>
+      {submitStatus === 'success' && <p>¡Mensaje enviado con éxito!</p>}
+      {submitStatus === 'error' && <p>Error al enviar el mensaje</p>}
     </form>
   );
 }
