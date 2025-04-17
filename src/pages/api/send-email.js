@@ -22,6 +22,9 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log('Entorno:', process.env.NODE_ENV);
+    console.log('API Key presente:', !!process.env.RESEND_API_KEY);
+    console.log('Body recibido:', req.body);
     const { name, email, message } = req.body;
     
     // Verificar que la API_KEY está configurada
