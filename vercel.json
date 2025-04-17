@@ -4,12 +4,11 @@
       "source": "/",
       "destination": "/es/",
       "permanent": true
-    }
-  ],
-  "routes": [
+    },
     {
-      "src": "/api/.*",
-      "dest": "/api/send-email.js",
+      "source": "/api/send-email",
+      "destination": "/api/send-email.js",
+      "permanent": false,
       "methods": ["POST", "OPTIONS"]
     }
   ]
