@@ -1,9 +1,10 @@
 interface Props {
   lang: string;
-  listLang: Record<string, string>;
+  listLang: Record<string, { flag: string; name: string }>;
+  className?: string;
 }
 
-const LanguageSwitcher = ({ lang, listLang }: Props) => {
+const LanguageSwitcher = ({ lang, listLang, className }: Props) => {
   return (
     <div className="select-group">
       <select
@@ -15,9 +16,10 @@ const LanguageSwitcher = ({ lang, listLang }: Props) => {
           window.location.href = `/${e.target.value}`;
         }}
       >
-        {Object.entries(listLang).map(([key, value]) => (
-          <option key={key} value={key} className="text-base">
-            {value}
+        {Object.entries(listLang).map(([key, {flag, name}]) => (
+          <option key={key} value={key} className="text-base flex gap-2 items-center">
+            <img src={flag} alt={name} className="w-6 h-4 rounded-sm" />
+            {name}
           </option>
         ))}
       </select>

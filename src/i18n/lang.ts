@@ -1,7 +1,7 @@
-export const listLang: Record<string, string> = {
-    es: 'Español',
-    en: 'English',
-}
+export const listLang: Record<string, { flag: string; name: string }> = {
+    es: { flag: '/flags/es.svg', name: 'Español' },
+    en: { flag: '/flags/us.svg', name: 'English' },
+};
 
 export const defaultLang: string = 'es';
 
