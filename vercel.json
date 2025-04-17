@@ -1,49 +1,9 @@
 {
-  "version": 2,
-  "builds": [
+  "redirects": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    },
-    {
-      "src": "api/send-email.js", 
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/send-email",
-      "methods": ["POST", "OPTIONS"],
-      "dest": "/api/send-email"
-    },
-    {
-      "src": "/es",
-      "dest": "/es/index.html"
-    },
-    {
-      "src": "/es/(.*)",
-      "dest": "/es/$1"
-    },
-    {
-      "src": "/en",
-      "dest": "/en/index.html"
-    },
-    {
-      "src": "/en/(.*)", 
-      "dest": "/en/$1"
-    },
-    {
-      "src": "/(.*\\.(webp|png|jpg|jpeg|svg))",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/(.*)", 
-      "dest": "/index.html"
+      "source": "/",
+      "destination": "/es/",
+      "permanent": true
     }
   ]
 }
