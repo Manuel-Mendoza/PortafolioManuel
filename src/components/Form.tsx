@@ -1,10 +1,6 @@
 import { useState } from 'react';
 
-interface FormProps {
-  lang: string;
-}
-
-export default function ContactForm({ lang }: FormProps) {
+export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

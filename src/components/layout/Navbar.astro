@@ -4,49 +4,54 @@ import { listLang } from "../../i18n/lang";
 import LanguageSwitcher from "./LanguageSwitcher";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-import ContactForm from "../Form";
-
-interface LanguageSwitcherProps {
-  lang: string;
-  listLang: Record<string, { flag: string; name: string }>;
-}
+import { FaRegCommentDots } from "react-icons/fa";
+import Form from "../Form";
+import { FaWindowClose } from "react-icons/fa";
 ---
 
-<nav class="navbar bg-base-200 px-4 shadow-lg">
-  <div class="navbar-start">
-    <div class="text-xl font-bold">{t("nav")}</div>
+<nav class="navbar bg-base-200">
+  <div class="navbar-start"></div>
+  <div class="navbar-center">
+    <h2 class="lg:text-2xl font-bold md:text-5xl">{t("nav")}</h2>
   </div>
-  
-  <div class="navbar-center hidden md:flex">
-    <h2 class="text-2xl font-display font-bold">{t("title")}</h2>
+  <div class="navbar-end">
+    <!-- Idiomas -->
+    <LanguageSwitcher lang={lang} listLang={listLang} client:load />
   </div>
-  
-  <div class="navbar-end gap-2">
-    <LanguageSwitcher 
-      lang={lang} 
-      listLang={listLang} 
-      client:load 
-      className="btn btn-ghost"
-    />
-    
-    <button 
-      class="btn btn-circle btn-primary fixed bottom-4 right-4 z-20 shadow-xl tooltip tooltip-left"
-      data-tip={t("contact")}
-      onclick="contact_modal.showModal()"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-      </svg>
-    </button>
+  <div
+    class="fixed bottom-2 right-2 p-4 bg-base-200 rounded-full z-20 cursor-pointer hover:scale-105 transition-all duration-200 group"
+    onclick="document.getElementById('contact-modal')?.showModal?.()"
+  >
+    <div class="flex items-center">
+      <FaRegCommentDots className="text-xl" />
+      <p
+        class="text-sm whitespace-nowrap max-w-0 overflow-hidden transition-all duration-300 group-hover:max-w-[100px] group-hover:ml-2"
+      >
+        Contactar
+      </p>
+    </div>
   </div>
 </nav>
 
-<dialog id="contact_modal" class="modal">
-  <div class="modal-box max-w-2xl">
-    <form method="dialog" class="modal-backdrop">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+<dialog id="contact-modal" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+        <FaWindowClose className="text-2xl cursor-pointer" />
+      </button>
     </form>
-    <h3 class="font-bold text-2xl mb-4">{t("contactFormTitle")}</h3>
-    <ContactForm lang={lang} />
+    <Form />
   </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
 </dialog>
+
+<style>
+  .group:hover p {
+    opacity: 1;
+    transition:
+      opacity 0.3s ease-in-out,
+      max-width 0.3s ease-in-out;
+  }
+</style>
