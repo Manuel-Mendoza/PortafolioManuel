@@ -15,7 +15,7 @@ export default function Form() {
         },
         body: JSON.stringify({
           to: 'developermanuel@icloud.com',
-          from: formData.get('email'),
+          email: formData.get('email'),
           name: formData.get('name'),
           message: formData.get('message')
         }),
