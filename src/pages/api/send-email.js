@@ -4,16 +4,21 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
   // Configurar CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://devmanuel.lat');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    console.error('Intento de acceso con método no permitido:', req.method);
+    return res.status(405).json({ 
+      error: 'Método no permitido',
+      allowedMethods: ['POST']
+    });
   }
 
   try {
